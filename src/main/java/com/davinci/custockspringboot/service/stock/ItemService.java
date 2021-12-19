@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+
 @Service
 public class ItemService {
 
@@ -28,4 +29,5 @@ public class ItemService {
                 createItemDto.getDescription(), supplier, batch);
         return itemRepository.save(newItem);
     }
+
 }

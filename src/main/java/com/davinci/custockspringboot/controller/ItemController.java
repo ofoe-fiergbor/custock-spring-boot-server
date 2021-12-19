@@ -9,10 +9,7 @@ import com.davinci.custockspringboot.service.stock.ItemService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -24,11 +21,13 @@ public class ItemController {
     private final SupplierRepository supplierRepository;
     private final BatchRepository batchRepository;
 
+
     public ItemController(ItemService itemService, SupplierRepository supplierRepository, BatchRepository batchRepository) {
         this.itemService = itemService;
         this.supplierRepository = supplierRepository;
         this.batchRepository = batchRepository;
     }
+
 
     @PostMapping("/item")
     @Operation(summary = "Create new Stock item(s)")
