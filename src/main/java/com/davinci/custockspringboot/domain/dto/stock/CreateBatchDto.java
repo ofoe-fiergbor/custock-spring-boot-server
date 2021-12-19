@@ -7,5 +7,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateBatchDto {
     private String name;
-    private long supplier;
+    private int supplier;
 }

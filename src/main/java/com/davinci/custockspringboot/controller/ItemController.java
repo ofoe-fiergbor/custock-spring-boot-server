@@ -38,7 +38,7 @@ public class ItemController {
             return new ResponseEntity<>("This supplier does not exist!", HttpStatus.BAD_REQUEST);
         }
         Optional<Batch> batch = batchRepository.findById(createItemDto.getBatch());
-        if (batch.isPresent()) {
+        if (batch.isEmpty()) {
             return new ResponseEntity<>("This batch does not exist!", HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(itemService.create(createItemDto, supplier.get(), batch.get()), HttpStatus.OK);

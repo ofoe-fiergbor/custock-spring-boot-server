@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateItemDto {
 
-    private long batch;
+    private int batch;
     private String name;
-    private long supplier;
+    private int supplier;
     private double quantity;
     private String description;
     private String unitOfMeasure;
