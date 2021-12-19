@@ -4,6 +4,7 @@ import com.davinci.custockspringboot.domain.dto.stock.CreateBatchDto;
 import com.davinci.custockspringboot.domain.model.stock.Supplier;
 import com.davinci.custockspringboot.domain.repository.stock.SupplierRepository;
 import com.davinci.custockspringboot.service.stock.BatchService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +28,7 @@ public class BatchController {
     }
 
     @PostMapping("/batch")
+    @Operation(summary = "Create new batch for Stock item(s)")
     public ResponseEntity<?> createBatch(@RequestBody CreateBatchDto createBatchDto) {
             Optional<Supplier> supplier = supplierRepository.findById(createBatchDto.getSupplier());
             if (supplier.isEmpty()) return new ResponseEntity<>("Supplier does not exist.", HttpStatus.BAD_REQUEST);

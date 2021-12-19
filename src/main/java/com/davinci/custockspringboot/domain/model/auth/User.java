@@ -1,6 +1,7 @@
 package com.davinci.custockspringboot.domain.model.auth;
 
 import com.davinci.custockspringboot.domain.model.auth.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -26,6 +27,7 @@ public class User implements UserDetails {
     private String lastName;
     private String username;
     private String email;
+    @JsonIgnore
     private String password;
     @ManyToOne
     private Role role;

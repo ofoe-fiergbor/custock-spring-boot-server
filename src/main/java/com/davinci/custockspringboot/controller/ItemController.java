@@ -6,6 +6,7 @@ import com.davinci.custockspringboot.domain.model.stock.Supplier;
 import com.davinci.custockspringboot.domain.repository.stock.BatchRepository;
 import com.davinci.custockspringboot.domain.repository.stock.SupplierRepository;
 import com.davinci.custockspringboot.service.stock.ItemService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,6 +31,7 @@ public class ItemController {
     }
 
     @PostMapping("/item")
+    @Operation(summary = "Create new Stock item(s)")
     public ResponseEntity<?> createItems(@RequestBody CreateItemDto createItemDto) {
         Optional<Supplier> supplier = supplierRepository.findById(createItemDto.getSupplier());
         if (supplier.isEmpty()) {
