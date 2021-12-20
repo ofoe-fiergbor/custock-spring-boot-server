@@ -5,7 +5,10 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class CreateBatchDto {
+public class EditItemDto {
+    private int id;
     private String name;
-    private int supplier;
+    private String description;
+    private String unitMeasurement;
+
 }

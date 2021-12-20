@@ -6,11 +6,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class CreateItemDto {
-
-    private int batch;
     private String name;
-    private int supplier;
-    private double quantity;
     private String description;
-    private String unitOfMeasure;
+    private String unitMeasurement;
+    private Integer supplierId;
+    private double quantity;
 }
