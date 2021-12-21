@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "suppliers")
+@Table
 @NoArgsConstructor
 public class Supplier {
 

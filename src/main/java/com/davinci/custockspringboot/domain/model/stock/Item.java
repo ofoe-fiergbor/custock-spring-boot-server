@@ -11,7 +11,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "items")
+@Table
 @NoArgsConstructor
 public class Item {
 
@@ -36,5 +36,13 @@ public class Item {
         this.timestamp = new Timestamp(new Date().getTime());
         this.user = user;
         this.quantity = quantity;
+    }
+
+    public void increaseQuantity(double q) {
+        this.quantity += q;
+    }
+
+    public void decreaseQuantity(double q) {
+        this.quantity -= q;
     }
 }

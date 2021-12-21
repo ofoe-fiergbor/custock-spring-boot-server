@@ -11,7 +11,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "transactions")
+@Table
 @NoArgsConstructor
 public class Transaction {
 

@@ -1,6 +1,5 @@
 package com.davinci.custockspringboot.domain.model.auth;
 
-import com.davinci.custockspringboot.domain.model.auth.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;

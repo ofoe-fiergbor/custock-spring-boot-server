@@ -10,5 +10,4 @@ public class CreateItemDto {
     private String description;
     private String unitMeasurement;
     private Integer supplierId;
-    private double quantity;
 }

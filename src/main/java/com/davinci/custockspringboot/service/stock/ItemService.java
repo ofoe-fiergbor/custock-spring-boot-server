@@ -6,6 +6,7 @@ import com.davinci.custockspringboot.domain.dto.stock.EditItemDto;
 import com.davinci.custockspringboot.domain.model.stock.Item;
 import com.davinci.custockspringboot.domain.model.stock.Supplier;
 import com.davinci.custockspringboot.domain.repository.stock.ItemRepository;
+import com.davinci.custockspringboot.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -28,14 +29,14 @@ public class ItemService {
     public Item createNewItem(CreateItemDto createItemDto, Supplier supplier) {
         Item newItem = new Item(createItemDto.getName(),
                 createItemDto.getDescription(),
-                createItemDto.getQuantity(),
+                0.00,
                 createItemDto.getUnitMeasurement(),
-                supplier, getContext().getName());
+                supplier, Utils.getContext().getName());
         return itemRepository.save(newItem);
     }
 
     public List<Item> fetchAllItems() {
-        return itemRepository.getItemsByUser(getContext().getName());
+        return itemRepository.getItemsByUser(Utils.getContext().getName());
     }
 
 
@@ -46,8 +47,5 @@ public class ItemService {
         return itemRepository.save(item);
     }
 
-    private Authentication getContext() {
-        return SecurityContextHolder.getContext().getAuthentication();
-    }
 
 }
