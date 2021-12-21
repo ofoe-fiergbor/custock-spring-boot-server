@@ -1,13 +1,12 @@
 package com.davinci.custockspringboot.domain.dto.stock;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-public class CreateSupplierDto {
+public class UpdateCustomerDto {
+    private int id;
     private String name;
     private String phoneNumber;
-    private String address;
     private String email;
+    private String address;
 }

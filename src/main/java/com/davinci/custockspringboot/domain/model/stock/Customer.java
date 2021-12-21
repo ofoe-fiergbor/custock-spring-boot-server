@@ -11,22 +11,22 @@ import java.util.Date;
 @Entity
 @Table
 @NoArgsConstructor
-public class Supplier {
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
     private String phoneNumber;
     private String email;
     private String address;
     private Date timestamp;
 
-    public Supplier(String name, String phoneNumber,String email, String address) {
-        this.name = name;
+    public Customer(String name, String phoneNumber, String email, String address) {
         this.phoneNumber = phoneNumber;
-        this.address = address;
+        this.name = name;
         this.email = email;
+        this.address = address;
         this.timestamp = new Timestamp(new Date().getTime());
     }
 }

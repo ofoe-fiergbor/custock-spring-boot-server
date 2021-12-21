@@ -15,8 +15,8 @@ public class SupplierService {
         this.supplierRepository = supplierRepository;
     }
 
-    public Supplier createSupplier(CreateSupplierDto createSupplierDto) {
-        return supplierRepository.save(new Supplier(createSupplierDto.getName(), createSupplierDto.getPhoneNumber(), createSupplierDto.getAddress()));
+    public Supplier createSupplier(CreateSupplierDto cs) {
+        return supplierRepository.save(new Supplier(cs.getName(), cs.getPhoneNumber(), cs.getEmail(), cs.getAddress()));
     }
 
 

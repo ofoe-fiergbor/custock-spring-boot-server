@@ -1,6 +1,5 @@
 package com.davinci.custockspringboot.domain.dto.stock;
 
-import com.davinci.custockspringboot.util.enums.TransactionType;
 import lombok.Data;
 
 @Data
