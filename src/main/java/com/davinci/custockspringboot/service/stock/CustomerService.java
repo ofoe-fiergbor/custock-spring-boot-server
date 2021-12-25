@@ -4,7 +4,6 @@ import com.davinci.custockspringboot.domain.dto.stock.CreateCustomerDto;
 import com.davinci.custockspringboot.domain.dto.stock.UpdateCustomerDto;
 import com.davinci.custockspringboot.domain.model.stock.Customer;
 import com.davinci.custockspringboot.domain.repository.stock.CustomerRepository;
-import com.davinci.custockspringboot.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +21,7 @@ public class CustomerService {
 
     public Customer create(CreateCustomerDto cc) {
         return customerRepository.save(
-                new Customer(cc.getName(), cc.toString(),cc.getEmail(), cc.getAddress())
+                new Customer(cc.getName(), cc.toString(),cc.getSocialMedia(), cc.getSocialMediaHandle())
         );
     }
 
@@ -32,9 +31,9 @@ public class CustomerService {
     }
 
     public Customer update(Customer customer, UpdateCustomerDto cu) {
-        customer.setAddress(cu.getAddress());
+        customer.setSocialMediaHandle(cu.getSocialMediaHandle());
         customer.setName(cu.getName());
-        customer.setEmail(cu.getEmail());
+        customer.setSocialMedia(cu.getSocialMedia());
         customer.setPhoneNumber(cu.getPhoneNumber());
         return customerRepository.save(customer);
     }

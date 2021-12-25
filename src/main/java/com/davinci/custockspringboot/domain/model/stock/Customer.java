@@ -18,15 +18,15 @@ public class Customer {
     private Integer id;
     private String name;
     private String phoneNumber;
-    private String email;
-    private String address;
+    private String socialMedia;
+    private String socialMediaHandle;
     private Date timestamp;
 
-    public Customer(String name, String phoneNumber, String email, String address) {
+    public Customer(String name, String phoneNumber, String socialMedia, String socialMediaHandle) {
         this.phoneNumber = phoneNumber;
         this.name = name;
-        this.email = email;
-        this.address = address;
+        this.socialMedia = socialMedia;
+        this.socialMediaHandle = socialMediaHandle;
         this.timestamp = new Timestamp(new Date().getTime());
     }
 }
