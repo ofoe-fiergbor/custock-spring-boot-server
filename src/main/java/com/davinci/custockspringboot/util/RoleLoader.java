@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class RoleLoader {
 
-    private RoleService roleService;
+    private final RoleService roleService;
 
     @Autowired
     public RoleLoader(RoleService roleService) {
